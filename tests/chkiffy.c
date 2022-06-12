@@ -1,10 +1,8 @@
-divert(-1)
-define(`suitea', `$1_suite( void )')
-divert(0)
-`#'include <check.h>
-`#'include "../src/template.h"
 
-`#'include <stdio.h>
+#include <check.h>
+#include "../src/iffy.h"
+
+#include <stdio.h>
 
 START_TEST( test_example ) {
 }
@@ -16,11 +14,11 @@ static void setup_example() {
 static void teardown_example() {
 }
 
-Suite* suitea(template) {
+Suite* iffy_suite( void ) {
    Suite* s = NULL;
    TCase* tc_example = NULL;
 
-   s = suite_create( "template" );
+   s = suite_create( "iffy" );
 
    tc_example = tcase_create( "example" );
 
